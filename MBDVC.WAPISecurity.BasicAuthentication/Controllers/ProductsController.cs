@@ -51,6 +51,7 @@ namespace MBDVC.WAPISecurity.BasicAuthentication.Controllers
             return Ok(products);
         }
 
+        [AllowAnonymous]
         public IHttpActionResult Get(int id)
         {
             var product = productsService.Get(id);

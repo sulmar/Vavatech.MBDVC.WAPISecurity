@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MBDVC.WAPISecurity.BasicAuthentication.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -19,6 +20,12 @@ namespace MBDVC.WAPISecurity.BasicAuthentication
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+
+            // Globalna autentyfikacja i autoryzacja
+            config.Filters.Add(new AuthorizeAttribute());
+            config.Filters.Add(new RequireHttpsAttribute());
+            config.Filters.Add(new BasicAuthenticationFilter());
         }
     }
 }
