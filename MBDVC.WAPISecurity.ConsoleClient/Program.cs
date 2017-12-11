@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MBDVC.WAPISecurity.ConsoleClient
@@ -12,12 +15,42 @@ namespace MBDVC.WAPISecurity.ConsoleClient
     {
         static void Main(string[] args)
         {
+            PrincipalTest();
+
             BasicAuthenticationTest().Wait();
 
             Console.WriteLine("Press any key to exit.");
 
+        
+
             Console.ReadKey();
 
+        }
+
+
+        private static void PrincipalTest()
+        {
+            Claim claim = new Claim("blabla", "1234");
+
+            Claim claimName = new Claim(ClaimTypes.Name, "marcin");
+            Claim claimEmail = new Claim(ClaimTypes.Email, "marcin.sulecki@gmail.com");
+            Claim claimPhone = new Claim(ClaimTypes.MobilePhone, "609851649");
+            Claim claimRole1 = new Claim(ClaimTypes.Role, "admin");
+            Claim claimRole2 = new Claim(ClaimTypes.Role, "user");
+
+            var claims = new List<Claim> { claim, claimName, claimEmail, claimPhone, claimRole1, claimRole2 };
+
+            IIdentity identity = new ClaimsIdentity(claims, "Basic");
+
+            IPrincipal principal = new ClaimsPrincipal(identity);
+
+
+            Thread.CurrentPrincipal = principal;
+
+            if (Thread.CurrentPrincipal.IsInRole("admin"))
+            {
+                Console.WriteLine("Jesteś adminem!");
+            }
         }
 
         private static async Task BasicAuthenticationTest()

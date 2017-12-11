@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
@@ -37,7 +38,23 @@ namespace MBDVC.WAPISecurity.BasicAuthentication.Filters
                 return;
             }
 
-            context.Principal = new GenericPrincipal(new GenericIdentity(result.username), new string[] { "user", "admin" });
+            Claim claim = new Claim("blabla", "1234");
+
+            Claim claimName = new Claim(ClaimTypes.Name, result.username);
+            Claim claimEmail = new Claim(ClaimTypes.Email, "marcin.sulecki@gmail.com");
+            Claim claimPhone = new Claim(ClaimTypes.MobilePhone, "609851649");
+            Claim claimRole1 = new Claim(ClaimTypes.Role, "admin");
+            Claim claimRole2 = new Claim(ClaimTypes.Role, "user");
+
+            var claims = new List<Claim> { claim, claimName, claimEmail, claimPhone, claimRole1, claimRole2 };
+
+            IIdentity identity = new ClaimsIdentity(claims, "Basic");
+
+            IPrincipal principal = new ClaimsPrincipal(identity);
+
+            context.Principal = principal;
+
+            // context.Principal = new GenericPrincipal(new GenericIdentity(result.username), new string[] { "user", "admin" });
 
         }
 

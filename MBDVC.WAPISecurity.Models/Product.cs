@@ -10,5 +10,7 @@ namespace MBDVC.WAPISecurity.Models
 
         public string Name { get; set; }
 
+        public bool IsDeleted { get; set; }
+
     }
 }

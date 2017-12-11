@@ -17,6 +17,8 @@ namespace MBDVC.WAPISecurity.MockServices
                 new Product { Id = 1, Name = "Produkt 1"},
                 new Product { Id = 2, Name = "Produkt 2"},
                 new Product { Id = 3, Name = "Produkt 3"},
+                new Product { Id = 3, Name = "Produkt 4", IsDeleted = true },
+                new Product { Id = 3, Name = "Produkt 5", IsDeleted = true },
             };
         }
 
