@@ -15,7 +15,7 @@ namespace MBDVC.WAPISecurity.BasicAuthentication.Results
         private IHttpActionResult innerResult;
         private string realm;
 
-        public BasicChallengeResult(IHttpActionResult innerResult, string realm)
+        public BasicChallengeResult(IHttpActionResult innerResult, string realm = null)
         {
             this.innerResult = innerResult;
             this.realm = realm;
@@ -28,7 +28,14 @@ namespace MBDVC.WAPISecurity.BasicAuthentication.Results
 
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
-                response.Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue("Basic"));
+                if (string.IsNullOrEmpty(realm))
+                {
+                    response.Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue("Basic"));
+                }
+                else
+                {
+                    response.Headers.WwwAuthenticate.Add(new AuthenticationHeaderValue("Basic", $"realm=\"{realm}\""));
+                }
             }
 
             return response;

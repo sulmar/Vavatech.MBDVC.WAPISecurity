@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MBDVC.WAPISecurity.MockServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBDVC.WAPISecurity.BasicAuthentication", "MBDVC.WAPISecurity.BasicAuthentication\MBDVC.WAPISecurity.BasicAuthentication.csproj", "{3ADD0A8B-F044-477A-A7EC-36884EA64D21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBDVC.WAPISecurity.ConsoleClient", "MBDVC.WAPISecurity.ConsoleClient\MBDVC.WAPISecurity.ConsoleClient.csproj", "{55E8EC7E-69C5-4F35-BA00-65CAAB3176DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3ADD0A8B-F044-477A-A7EC-36884EA64D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ADD0A8B-F044-477A-A7EC-36884EA64D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ADD0A8B-F044-477A-A7EC-36884EA64D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55E8EC7E-69C5-4F35-BA00-65CAAB3176DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55E8EC7E-69C5-4F35-BA00-65CAAB3176DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55E8EC7E-69C5-4F35-BA00-65CAAB3176DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55E8EC7E-69C5-4F35-BA00-65CAAB3176DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

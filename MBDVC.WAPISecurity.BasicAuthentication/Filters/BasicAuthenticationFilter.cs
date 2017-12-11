@@ -64,7 +64,7 @@ namespace MBDVC.WAPISecurity.BasicAuthentication.Filters
 
         public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken)
         {
-            context.Result = new BasicChallengeResult(context.Result, "");
+            context.Result = new BasicChallengeResult(context.Result, "sales");
 
             return Task.FromResult(0);
         }
