@@ -24,14 +24,23 @@ namespace MBDVC.WAPISecurity.SecretKeyService.Controllers
             this.productsService = productsService;
         }
 
-        public IList<Product> Get()
+        public IHttpActionResult Get()
         {
-            return productsService.Get();
+            var products = productsService.Get();
+
+            return Ok(products);
         }
 
-        public Product Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return productsService.Get(id);
+            var product = productsService.Get(id);
+
+            if (product==null)
+            {
+                return NotFound();
+            }
+
+            return Ok(product);
         }
     }
 }
