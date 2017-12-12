@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Aspnet.Identity.EntityFramework" Version="2.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MBDVC.WAPISecurity.Models\MBDVC.WAPISecurity.Models.csproj" />
   </ItemGroup>
 
