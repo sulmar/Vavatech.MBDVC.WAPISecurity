@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -147,6 +148,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MBDVC.WAPISecurity.DbServices\MBDVC.WAPISecurity.DbServices.csproj">
+      <Project>{3BF44C4D-FE46-4555-8347-7E276E588A56}</Project>
+      <Name>MBDVC.WAPISecurity.DbServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MBDVC.WAPISecurity.IServices\MBDVC.WAPISecurity.IServices.csproj">
       <Project>{620cdf52-aff3-4fb2-b6db-c8d0d1e13fa2}</Project>
       <Name>MBDVC.WAPISecurity.IServices</Name>

@@ -32,7 +32,19 @@ namespace MBDVC.WAPISecurity.DbServices
 
         public async Task<IdentityResult> Register(UserProfile userProfile)
         {
+            var passwordHasher = new PasswordHasher();
+
             var identityUser = new IdentityUser(userProfile.Login);
+            identityUser.PasswordHash = passwordHasher.HashPassword(userProfile.Password);
+            identityUser.Email = userProfile.Email;
+            identityUser.PhoneNumber = userProfile.PhoneNumber;
+
+
+            //var role1 = new IdentityUserRole { RoleId = "admin", UserId = identityUser.Id };
+            //var role2 = new IdentityUserRole { RoleId = "user", UserId = identityUser.Id };
+
+            //identityUser.Roles.Add(role1);
+            //identityUser.Roles.Add(role2);
 
             var result = await userManager.CreateAsync(identityUser);
 

@@ -11,7 +11,7 @@ namespace MBDVC.WAPISecurity.DbServices
     {
 
         public AuthContext()
-            : base("AuthContext")
+            : base("AuthConnection")
         {
 
         }

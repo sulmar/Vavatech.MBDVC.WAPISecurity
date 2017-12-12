@@ -1,4 +1,5 @@
-﻿using MBDVC.WAPISecurity.MockServices;
+﻿using MBDVC.WAPISecurity.DbServices;
+using MBDVC.WAPISecurity.MockServices;
 using MBDVC.WAPISecurity.TokenAuthentication.Providers;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
@@ -34,7 +35,7 @@ namespace MBDVC.WAPISecurity.TokenAuthentication
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromHours(1),
-                Provider = new ServiceAuthorizeServerProvider(new MockAuthService()),
+                Provider = new DbAuthorizeServerProvider(new DbAuthenticationService())
             };
 
             app.UseOAuthAuthorizationServer(options);
