@@ -45,7 +45,6 @@ namespace MBDVC.WAPISecurity.DbServices
 
             //identityUser.Roles.Add(role1);
             //identityUser.Roles.Add(role2);
-
             var result = await userManager.CreateAsync(identityUser);
 
             return result;
