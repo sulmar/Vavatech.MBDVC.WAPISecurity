@@ -21,7 +21,7 @@ namespace MBDVC.WAPISecurity.TokenAuthentication
             WebApiConfig.Register(config);
 
             // config OAuth 2.0
-            ConfigureOAuth(app);
+            ConfigureOAuth(app);  
 
             app.UseWebApi(config);
         }
