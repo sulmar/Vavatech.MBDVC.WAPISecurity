@@ -9,7 +9,6 @@ using System.Web.Http;
 
 namespace MBDVC.WAPISecurity.TokenAuthentication.Controllers
 {
-    [Authorize]
     public class ProductsController : ApiController
     {
         private readonly IProductsService productsService;
@@ -28,21 +27,21 @@ namespace MBDVC.WAPISecurity.TokenAuthentication.Controllers
         public IHttpActionResult Get()
         {
 
-            var principal = this.User as ClaimsPrincipal;
+            //var principal = this.User as ClaimsPrincipal;
 
-            if (principal.HasClaim(c => c.Type == ClaimTypes.Email))
-            {
-                var email = principal.Claims.First(c => c.Type == ClaimTypes.Email).Value;
+            //if (principal.HasClaim(c => c.Type == ClaimTypes.Email))
+            //{
+            //    var email = principal.Claims.First(c => c.Type == ClaimTypes.Email).Value;
 
-                // TODO: send email
-            }
+            //    // TODO: send email
+            //}
 
             var products = productsService.Get();
 
-            if (!this.User.IsInRole("admin"))
-            {
-                products = products.Where(p => !p.IsDeleted).ToList();
-            }
+            //if (!this.User.IsInRole("admin"))
+            //{
+            //    products = products.Where(p => !p.IsDeleted).ToList();
+            //}
 
 
 
