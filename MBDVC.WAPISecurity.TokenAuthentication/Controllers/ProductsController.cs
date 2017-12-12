@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace MBDVC.WAPISecurity.TokenAuthentication.Controllers
 {
+    [Authorize]
     public class ProductsController : ApiController
     {
         private readonly IProductsService productsService;

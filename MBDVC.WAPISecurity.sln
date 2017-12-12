@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBDVC.WAPISecurity.ConsoleC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBDVC.WAPISecurity.TokenAuthentication", "MBDVC.WAPISecurity.TokenAuthentication\MBDVC.WAPISecurity.TokenAuthentication.csproj", "{BB94A600-EA23-438F-9427-C35FC18945A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{75E93A50-C9F5-4634-9364-4716E59A72E0}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A9C5878D-ACA6-472E-AF95-D57EFEE49301}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{BB94A600-EA23-438F-9427-C35FC18945A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB94A600-EA23-438F-9427-C35FC18945A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB94A600-EA23-438F-9427-C35FC18945A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75E93A50-C9F5-4634-9364-4716E59A72E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75E93A50-C9F5-4634-9364-4716E59A72E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75E93A50-C9F5-4634-9364-4716E59A72E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75E93A50-C9F5-4634-9364-4716E59A72E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C5878D-ACA6-472E-AF95-D57EFEE49301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C5878D-ACA6-472E-AF95-D57EFEE49301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C5878D-ACA6-472E-AF95-D57EFEE49301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C5878D-ACA6-472E-AF95-D57EFEE49301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
